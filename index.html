@@ -3,46 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemini Custom Studio</title>
-  <style>:root{--bg-main:#131314;--bg-sidebar:#1e1f20;--bg-surface:#282a2c;--text-main:#e3e3e3;--text-muted:#80868b;--accent:#a8c7fa;--accent-hover:#c2e7ff}body{background:var(--bg-main);color:var(--text-main);height:100vh;margin:0;font-family:Segoe UI,system-ui,sans-serif;display:flex;overflow:hidden}.sidebar{background:var(--bg-sidebar);box-sizing:border-box;border-right:1px solid #3c4043;flex-direction:column;gap:16px;width:280px;padding:16px;transition:transform .3s;display:flex}.sidebar-header{color:var(--text-main);justify-content:space-between;align-items:center;font-size:15px;font-weight:600;display:flex}.new-chat-btn{color:var(--accent);cursor:pointer;text-align:left;background:#2b2c2e;border:none;border-radius:20px;align-items:center;gap:8px;padding:10px 16px;font-size:14px;font-weight:500;display:flex}.new-chat-btn:hover{color:var(--accent-hover);background:#37393b}.history-section{flex-direction:column;flex:1;gap:4px;margin-top:8px;display:flex;overflow-y:auto}.history-title{color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;padding:0 8px 4px;font-size:12px;font-weight:600}.history-item{cursor:pointer;color:var(--text-main);white-space:nowrap;text-overflow:ellipsis;border-radius:8px;padding:10px 12px;font-size:14px;transition:background .2s;overflow:hidden}.history-item:hover{background:#2d2f31}.history-item.active{background:#37393b;font-weight:500}.key-container{background:var(--bg-surface);border-radius:12px;flex-direction:column;gap:10px;margin-top:auto;padding:12px;display:flex}.key-container label{color:var(--text-muted);text-transform:uppercase;font-size:11px;font-weight:600}.key-container input{background:var(--bg-main);color:#fff;border:1px solid #444746;border-radius:8px;padding:8px 12px;font-size:13px}.main-canvas{background:var(--bg-main);flex-direction:column;flex:1;height:100%;display:flex;position:relative}.app-header{border-bottom:1px solid #3c4043;justify-content:space-between;align-items:center;height:60px;padding:0 24px;display:flex}.app-logo{color:#e3e3e3;font-size:20px;font-weight:500}.chat-scroller{box-sizing:border-box;flex-direction:column;flex:1;width:100%;max-width:800px;margin:0 auto;padding:24px 0;display:flex;overflow-y:auto}.msg-row{box-sizing:border-box;width:100%;margin-bottom:24px;padding:0 16px;display:flex}.msg-row.user{justify-content:flex-end}.msg-content{word-wrap:break-word;max-width:85%;font-size:16px;line-height:1.6}.msg-row.user .msg-content{background:var(--bg-surface);color:var(--text-main);border-radius:22px;padding:12px 20px}.msg-row.ai .msg-content{color:#e3e3e3;width:100%}.input-wrapper{box-sizing:border-box;width:100%;max-width:800px;margin:0 auto;padding:0 16px 24px}.input-pill{background:var(--bg-sidebar);border:1px solid #444746;border-radius:32px;align-items:center;gap:12px;padding:8px 16px 8px 24px;transition:border-color .2s;display:flex}.input-pill:focus-within{border-color:#8ab4f8}.input-pill select{color:var(--accent);cursor:pointer;background:0 0;border:none;outline:none;padding-right:8px;font-size:14px;font-weight:500}.input-pill select option{background:var(--bg-sidebar);color:#fff}.input-pill input[type=text]{color:#fff;background:0 0;border:none;outline:none;flex:1;padding:8px 0;font-size:16px}.input-pill input::placeholder{color:var(--text-muted)}.input-pill button{background:var(--accent);cursor:pointer;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;transition:background .2s;display:flex}.input-pill button:hover{background:var(--accent-hover)}.input-pill button svg{fill:#131314;width:20px;height:20px}</style>
-  <script type="module" crossorigin src="/assets/index-88QTsjGj.js"></script>
+  <title>Aura AI Studio</title>
+  <style>:root{--bg-main:#0d0b14;--bg-sidebar:#141122;--bg-surface:#221b33;--text-main:#f1eef7;--text-muted:#9f96b2;--accent:#d2a8ff;--accent-hover:#f0dbff;--glow-color:#a373ff26}body{background:var(--bg-main);color:var(--text-main);height:100vh;margin:0;font-family:Segoe UI,system-ui,sans-serif;display:flex;overflow:hidden}#authOverlay{background:var(--bg-main);z-index:1000;justify-content:center;align-items:center;width:100%;height:100%;display:flex;position:fixed;top:0;left:0}.auth-card{background:var(--bg-sidebar);border:1px solid var(--bg-surface);text-align:center;width:340px;box-shadow:0 0 40px var(--glow-color);border-radius:24px;padding:40px}.auth-card h2{color:var(--accent);margin-top:0}.auth-card input{background:var(--bg-main);color:#fff;box-sizing:border-box;border:1px solid #3c3454;border-radius:10px;width:100%;margin:10px 0;padding:12px}.auth-btn{background:var(--accent);color:#130f1c;cursor:pointer;border:none;border-radius:10px;width:100%;margin-top:10px;padding:12px;font-weight:700}.auth-btn:hover{background:var(--accent-hover)}.toggle-link{color:var(--text-muted);cursor:pointer;margin-top:15px;font-size:13px;display:inline-block}.sidebar{background:var(--bg-sidebar);box-sizing:border-box;border-right:1px solid #251e38;flex-direction:column;gap:16px;width:280px;padding:16px;display:flex}.sidebar-header{justify-content:space-between;align-items:center;font-size:15px;font-weight:600;display:flex}.new-chat-btn{background:var(--bg-surface);color:var(--accent);cursor:pointer;text-align:left;border:1px solid #3c3454;border-radius:20px;align-items:center;gap:8px;padding:10px 16px;font-size:14px;font-weight:500;display:flex}.new-chat-btn:hover{background:#2d2344}.history-section{flex-direction:column;flex:1;gap:4px;display:flex;overflow-y:auto}.history-title{color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;padding:0 8px 4px;font-size:11px;font-weight:600}.history-item{cursor:pointer;color:var(--text-main);white-space:nowrap;text-overflow:ellipsis;border-radius:8px;padding:10px 12px;font-size:14px;overflow:hidden}.history-item:hover{background:#221738}.history-item.active{background:var(--bg-surface);border-left:3px solid var(--accent);font-weight:500}.key-container{background:var(--bg-surface);border:1px solid #3c3454;border-radius:12px;flex-direction:column;gap:10px;margin-top:auto;padding:12px;display:flex}.key-container label{color:var(--text-muted);font-size:11px;font-weight:600}.key-container input{background:var(--bg-main);color:#fff;border:1px solid #3c3454;border-radius:8px;padding:8px 12px;font-size:13px}.logout-link{color:#ff8080;text-align:center;cursor:pointer;margin-top:5px;font-size:12px}.main-canvas{background:radial-gradient(circle at 50% 110%, var(--glow-color), var(--bg-main) 60%);flex-direction:column;flex:1;height:100%;display:flex;position:relative}.app-header{border-bottom:1px solid #251e38;justify-content:space-between;align-items:center;height:60px;padding:0 24px;display:flex}.app-logo{color:var(--text-main);letter-spacing:-.5px;font-size:20px;font-weight:500}.chat-scroller{box-sizing:border-box;flex-direction:column;flex:1;width:100%;max-width:800px;margin:0 auto;padding:24px 0;display:flex;overflow-y:auto}.msg-row{box-sizing:border-box;width:100%;margin-bottom:24px;padding:0 16px;display:flex}.msg-row.user{justify-content:flex-end}.msg-content{word-wrap:break-word;max-width:85%;font-size:16px;line-height:1.6}.msg-row.user .msg-content{background:var(--bg-surface);border:1px solid #3c3454;border-radius:22px;padding:12px 20px}.msg-row.ai .msg-content{color:var(--text-main);width:100%}.input-wrapper{box-sizing:border-box;width:100%;max-width:800px;margin:0 auto;padding:0 16px 24px}.input-pill{background:var(--bg-sidebar);border:1px solid #3c3454;border-radius:32px;align-items:center;gap:12px;padding:8px 16px 8px 24px;display:flex}.input-pill:focus-within{border-color:var(--accent);box-shadow:0 0 15px #d2a8ff33}.input-pill select{color:var(--accent);cursor:pointer;background:0 0;border:none;outline:none;font-size:14px;font-weight:500}.input-pill select option{background:var(--bg-sidebar);color:#fff}.input-pill input[type=text]{color:#fff;background:0 0;border:none;outline:none;flex:1;font-size:16px}.input-pill button{background:var(--accent);cursor:pointer;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;display:flex}.input-pill button:hover{background:var(--accent-hover)}.input-pill button svg{fill:#130f1c;width:20px;height:20px}</style>
+  <script type="module" crossorigin src="/assets/index-D_PxDjd0.js"></script>
 </head>
 <body>
 
-  <!-- Sidebar Component -->
-  <div class="sidebar">
-    <div class="sidebar-header">
-      <span>Studio Control</span>
-    </div>
-    <button class="new-chat-btn" id="newChatBtn">
-      <span>＋</span> New chat
-    </button>
-    
-    <div class="history-title" style="margin-top:16px;">Recent chats</div>
-    <div class="history-section" id="historySection">
-      <!-- Dynamic history loops load here -->
-    </div>
-    
-    <div class="key-container">
-      <label for="geminiKey">Gemini Access Token</label>
-      <input type="password" id="geminiKey" placeholder="Google AI Studio link...">
-      <label for="claudeKey">Groq Access Token</label>
-      <input type="password" id="claudeKey" placeholder="Groq Cloud Console link...">
+  <!-- Auth Screen Guard -->
+  <div id="authOverlay">
+    <div class="auth-card">
+      <h2 id="authTitle">Sign In</h2>
+      <input type="email" id="authEmail" placeholder="School or Personal Email">
+      <input type="password" id="authPassword" placeholder="Password (Min 6 chars)">
+      <button class="auth-btn" id="authSubmitBtn">Login</button>
+      <div class="toggle-link" id="authToggle">Need an account? Sign up</div>
     </div>
   </div>
 
-  <!-- Workspace Canvas -->
+  <!-- App Workspace -->
+  <div class="sidebar">
+    <div class="sidebar-header"><span>Aura Studio</span></div>
+    <button class="new-chat-btn" id="newChatBtn"><span>＋</span> New chat</button>
+    <div class="history-title" style="margin-top:16px;">Cloud History</div>
+    <div class="history-section" id="historySection"></div>
+    
+    <div class="key-container">
+      <label for="geminiKey">Gemini Token</label>
+      <input type="password" id="geminiKey" placeholder="Saving to cloud...">
+      <label for="claudeKey">Groq Token</label>
+      <input type="password" id="claudeKey" placeholder="Saving to cloud...">
+      <div class="logout-link" id="logoutBtn">Sign Out Account</div>
+    </div>
+  </div>
+
   <div class="main-canvas">
-    <div class="app-header">
-      <div class="app-logo">Gemini Custom Hub</div>
-    </div>
-    
-    <div class="chat-scroller" id="chatScroller">
-      <div class="msg-row ai">
-        <div class="msg-content">Hello! How can I help you today? Select your model engine below to get started.</div>
-      </div>
-    </div>
-    
+    <div class="app-header"><div class="app-logo">Aura AI Hub</div></div>
+    <div class="chat-scroller" id="chatScroller"></div>
     <div class="input-wrapper">
       <div class="input-pill">
         <select id="aiSelector">
@@ -50,9 +46,7 @@
           <option value="claude">Groq 20B</option>
         </select>
         <input type="text" id="userInput" placeholder="Ask your engine anything...">
-        <button id="sendBtn">
-          <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
-        </button>
+        <button id="sendBtn"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
       </div>
     </div>
   </div>
